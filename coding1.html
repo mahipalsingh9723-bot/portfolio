@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Bank Management Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+/* Navbar */
+
+nav{
+    width:100%;
+    background:#0f172a;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+/* Hero Section */
+
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)),
+    url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero-content button{
+    padding:14px 35px;
+    border:none;
+    border-radius:8px;
+    background:#38bdf8;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.hero-content button:hover{
+    background:#0284c7;
+}
+
+/* Section */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:#0f172a;
+}
+
+/* Features */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#2563eb;
+}
+
+/* About */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:12px;
+}
+
+.about-text h2{
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+.about-text p{
+    line-height:1.8;
+}
+
+/* Stats */
+
+.stats{
+    background:#0f172a;
+    color:white;
+}
+
+.stats-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    text-align:center;
+}
+
+.stat-box h2{
+    font-size:45px;
+    margin-bottom:10px;
+    color:#38bdf8;
+}
+
+/* Contact */
+
+.contact form{
+    max-width:600px;
+    margin:auto;
+}
+
+.input-box{
+    margin-bottom:20px;
+}
+
+.input-box input,
+.input-box textarea{
+    width:100%;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+.contact button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    background:#020617;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:38px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav>
+
+    <div class="logo">BankPro</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Modern Bank Management System</h1>
+
+        <p>
+            Secure, Fast and Smart Banking Solutions
+            for Modern Financial Services.
+        </p>
+
+        <button onclick="showMessage()">Explore Now</button>
+
+    </div>
+
+</section>
+
+<!-- Features -->
+
+<section id="features">
+
+    <h2 class="section-title">Our Features</h2>
+
+    <div class="features">
+
+        <div class="card">
+            <h3>Account Management</h3>
+            <p>
+                Create and manage customer bank accounts
+                with complete security.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Money Transfer</h3>
+            <p>
+                Transfer money instantly between accounts
+                with real-time processing.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Loan Services</h3>
+            <p>
+                Manage customer loans, EMI calculations,
+                and payment tracking.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Secure Banking</h3>
+            <p>
+                Advanced encryption and secure authentication
+                for customer safety.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- About -->
+
+<section id="about">
+
+    <div class="about">
+
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="about-text">
+
+            <h2>About Our Banking System</h2>
+
+            <p>
+                Our Bank Management System is designed to provide
+                efficient banking operations with modern technologies.
+                It supports account handling, online transactions,
+                customer management, security systems, and financial
+                reporting with a user-friendly interface.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Stats -->
+
+<section class="stats">
+
+    <div class="stats-container">
+
+        <div class="stat-box">
+            <h2 id="clients">0</h2>
+            <p>Happy Clients</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="transactions">0</h2>
+            <p>Transactions</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="branches">0</h2>
+            <p>Branches</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <form onsubmit="sendForm(event)">
+
+        <div class="input-box">
+            <input type="text" placeholder="Enter Your Name" required>
+        </div>
+
+        <div class="input-box">
+            <input type="email" placeholder="Enter Your Email" required>
+        </div>
+
+        <div class="input-box">
+            <textarea placeholder="Your Message"></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 BankPro Management System | All Rights Reserved
+    </p>
+
+</footer>
+
+<script>
+
+/* Button Message */
+
+function showMessage(){
+    alert("Welcome to BankPro Management System");
+}
+
+/* Contact Form */
+
+function sendForm(event){
+
+    event.preventDefault();
+
+    alert("Message Sent Successfully!");
+}
+
+/* Counter Animation */
+
+let clients = 0;
+let transactions = 0;
+let branches = 0;
+
+let counter = setInterval(() => {
+
+    if(clients < 5000){
+        clients += 100;
+        document.getElementById("clients").innerText = clients + "+";
+    }
+
+    if(transactions < 12000){
+        transactions += 250;
+        document.getElementById("transactions").innerText = transactions + "+";
+    }
+
+    if(branches < 120){
+        branches += 2;
+        document.getElementById("branches").innerText = branches + "+";
+    }
+
+    if(clients >= 5000 &&
+       transactions >= 12000 &&
+       branches >= 120){
+
+        clearInterval(counter);
+    }
+
+}, 50);
+
+</script>
+
+</body>
+</html>
